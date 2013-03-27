@@ -15,77 +15,88 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.Enemy">
-    <Position X="0.5" Y="4" Width="1.5" />
+    <Position X="2.75" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enemy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.MovingObject">
-    <Position X="0.5" Y="0.5" Width="4.25" />
+    <Position X="3.75" Y="4.5" Width="4.25" />
+    <AssociationLine Name="_movingBehaviour" Type="GameProject.MovingBehaviour" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8" Y="5.438" />
+        <Point X="8.375" Y="5.438" />
+        <Point X="8.375" Y="4.316" />
+        <Point X="10" Y="4.316" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AgQAAIAAAIAAAwAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>MovingObject.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_movingBehaviour" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="GameProject.PlayerShip">
-    <Position X="5.5" Y="3.75" Width="1.5" />
+    <Position X="9.5" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PlayerShip.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.Projectile">
-    <Position X="5.25" Y="0.5" Width="1.5" />
+    <Position X="7.25" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Projectile.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.StraightLine" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="8.75" Width="1.5" />
+    <Position X="8.25" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>StraightLine.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.Wave" BaseTypeListCollapsed="true">
-    <Position X="5" Y="8.75" Width="1.5" />
+    <Position X="12.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Sinus.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.RowByRow" BaseTypeListCollapsed="true">
-    <Position X="2.75" Y="8.75" Width="1.5" />
+    <Position X="10.5" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>RowByRow.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.Chure">
-    <Position X="0.5" Y="5.75" Width="1.5" />
+    <Position X="0.5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Chure.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.Thege">
-    <Position X="2.75" Y="5.75" Width="1.5" />
+    <Position X="2.75" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Thege.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.Sinode">
-    <Position X="5" Y="5.75" Width="1.5" />
+    <Position X="5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Sinode.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameProject.MovingBehaviour" Collapsed="true">
-    <Position X="2.75" Y="7.5" Width="1.5" />
+  <Class Name="GameProject.MovingBehaviour">
+    <Position X="10" Y="3.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAABAAIAAAQAAA=</HashCode>
       <FileName>MovingBehaviour.cs</FileName>
