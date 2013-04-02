@@ -33,17 +33,17 @@ namespace GameProject
                 movingObject.SetPosition(position + new Vector2 (_speed.X,0));
             }
 
-            position = movingObject.GetPosition();
+            position = movingObject.GetPosition() + movingObject.GetOrigin();
 
             if (position.X > viewport.Width - (movingObject.Bounds().Width/2))
             {
-                movingObject.SetPosition(new Vector2(viewport.Width - (movingObject.Bounds().Width / 2), position.Y));
+                movingObject.SetPosition(new Vector2((viewport.Width - (movingObject.Bounds().Width / 2)) - movingObject.GetOrigin().X, position.Y));
                 _reachedEdge = (int)position.Y;
                 _speed = _speed * new Vector2(-1, 1);
             }
             if (position.X < movingObject.Bounds().Width / 2)
             {
-                movingObject.SetPosition(new Vector2(movingObject.Bounds().Width / 2, position.Y));
+                movingObject.SetPosition(new Vector2((movingObject.Bounds().Width / 2) - movingObject.GetOrigin().X, position.Y));
                 _reachedEdge = (int)position.Y;
                 _speed = _speed * new Vector2(-1, 1);
             }
