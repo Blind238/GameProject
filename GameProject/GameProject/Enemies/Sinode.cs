@@ -6,11 +6,11 @@ using Microsoft.Xna.Framework;
 
 namespace GameProject
 {
-    public class Projectile : MovingObject
+    public class Sinode : Enemy
     {
-        public Projectile(Game game) 
+        public Sinode(Game game)
             : base(game){
-            SetMovingBehaviour(new StraightLine(this));
+            throw new System.NotImplementedException();
         }
     }
 }

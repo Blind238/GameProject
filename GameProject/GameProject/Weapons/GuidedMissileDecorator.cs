@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
 
 namespace GameProject
 {
-    public class LaserDecorator : WeaponUpgrade
+    public class GuidedMissileDecorator : WeaponUpgrade
     {
-        public LaserDecorator(IWeapon wpn) {
+        public GuidedMissileDecorator(IWeapon wpn) {
             _wpn = wpn;
         }
 
-        public void shoot() {
+        public override void Shoot(Vector2 position) {
             throw new NotImplementedException();
-            _wpn.shoot();
         }
     }
 }

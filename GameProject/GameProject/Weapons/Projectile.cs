@@ -6,11 +6,11 @@ using Microsoft.Xna.Framework;
 
 namespace GameProject
 {
-    public class PowerUp : MovingObject
+    public class Projectile : MovingObject
     {
-        public PowerUp(Game game)
-            : base(game) {
-            throw new System.NotImplementedException();
+        public Projectile(Game game)
+            : base(game)
+        {
         }
     }
 }

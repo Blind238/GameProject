@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework;
 
 namespace GameProject
 {
-    public class Chure : Enemy
+    public abstract class Enemy : MovingObject
     {
-        public Chure() {
-            SetMovingBehaviour(new RowByRow(this));
+        public Enemy(Game game)
+            : base(game){
         }
     }
 }

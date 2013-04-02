@@ -4,13 +4,13 @@
     <Position X="1" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Enemy.cs</FileName>
+      <FileName>Enemies\Enemy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.MovingObject">
-    <Position X="1.75" Y="2" Width="4.25" />
+    <Position X="1.75" Y="1.25" Width="4.25" />
     <TypeIdentifier>
-      <HashCode>AgQAAIAAAIAAAwAAAAAAIAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <HashCode>AgQAAIQCAaAAAwAIAIAAAAAAACAAAgAAAAAAgAAAAgA=</HashCode>
       <FileName>MovingObject.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -20,7 +20,7 @@
   <Class Name="GameProject.PlayerShip">
     <Position X="7" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PlayerShip.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -38,84 +38,84 @@
     <Position X="6.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>StraightLine.cs</FileName>
+      <FileName>Movement\StraightLine.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.Wave" BaseTypeListCollapsed="true">
     <Position X="11.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Sinus.cs</FileName>
+      <FileName>Movement\Sinus.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.RowByRow" BaseTypeListCollapsed="true">
     <Position X="9" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>RowByRow.cs</FileName>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAhARAAAAAAAAAA=</HashCode>
+      <FileName>Movement\RowByRow.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.Chure">
     <Position X="0.5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Chure.cs</FileName>
+      <FileName>Enemies\Chure.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.Thege">
     <Position X="2.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Thege.cs</FileName>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enemies\Thege.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.Sinode">
     <Position X="5" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Sinode.cs</FileName>
+      <FileName>Enemies\Sinode.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.MovingBehaviour" HideInheritanceLine="true">
     <Position X="8.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAABAAIAAAQAAA=</HashCode>
-      <FileName>MovingBehaviour.cs</FileName>
+      <HashCode>AAAAAAAAEIAAAAAAAAAAABAAAAEAAAAABAAIAAAQAAA=</HashCode>
+      <FileName>Movement\MovingBehaviour.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.LaserDecorator">
     <Position X="10.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>LaserDecorator.cs</FileName>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Weapons\LaserDecorator.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.GuidedMissileDecorator">
     <Position X="14.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GuidedMissileDecorator.cs</FileName>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Weapons\GuidedMissileDecorator.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.RocketDecorator">
     <Position X="12.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>RocketDecorator.cs</FileName>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Weapons\RocketDecorator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GameProject.Bullet" Collapsed="true" HideInheritanceLine="true" BaseTypeListCollapsed="true">
-    <Position X="10.25" Y="7.25" Width="1.5" />
+  <Class Name="GameProject.Cannon" HideInheritanceLine="true" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Bullet.cs</FileName>
+      <HashCode>AAAAAAAAAAAABAAAIAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Weapons\Cannon.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GameProject.WeaponUpgrade" HideInheritanceLine="true">
     <Position X="12.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAABAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>WeaponUpgrade.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -124,7 +124,7 @@
     <Position X="13.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Follow.cs</FileName>
+      <FileName>Movement\Follow.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameProject.PowerUp">
@@ -141,11 +141,39 @@
       <FileName>Resources.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="GameProject.PlayerMovement">
+    <Position X="15" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Movement\PlayerMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameProject.Game1" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEEAAAAAAAwAAAAAAAAAAAAAAAAgAAAAAAAAAAAQ=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameProject.GameLogic" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQACAAAATAAARAAAAAAAAAQABAAAAAAAAAAAAAAEAQ=</HashCode>
+      <FileName>GameLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameProject.Program" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="GameProject.IWeapon">
     <Position X="10.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IWeapon.cs</FileName>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Weapons\IWeapon.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

@@ -107,28 +107,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bullet.cs" />
-    <Compile Include="Chure.cs" />
-    <Compile Include="Enemy.cs" />
-    <Compile Include="Follow.cs" />
-    <Compile Include="GameComponent1.cs" />
-    <Compile Include="GuidedMissileDecorator.cs" />
-    <Compile Include="IWeapon.cs" />
-    <Compile Include="LaserDecorator.cs" />
-    <Compile Include="MovingBehaviour.cs" />
+    <Compile Include="Weapons\Cannon.cs" />
+    <Compile Include="Enemies\Chure.cs" />
+    <Compile Include="Enemies\Enemy.cs" />
+    <Compile Include="Movement\Follow.cs" />
+    <Compile Include="GameHelper.cs" />
+    <Compile Include="GameLogic.cs" />
+    <Compile Include="Weapons\GuidedMissileDecorator.cs" />
+    <Compile Include="Weapons\IWeapon.cs" />
+    <Compile Include="Weapons\LaserDecorator.cs" />
+    <Compile Include="Movement\MovingBehaviour.cs" />
     <Compile Include="MovingObject.cs" />
+    <Compile Include="Movement\PlayerMovement.cs" />
     <Compile Include="PlayerShip.cs" />
     <Compile Include="Projectile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Resources.cs" />
-    <Compile Include="RocketDecorator.cs" />
-    <Compile Include="RowByRow.cs" />
-    <Compile Include="Sinode.cs" />
-    <Compile Include="Sinus.cs" />
-    <Compile Include="StraightLine.cs" />
-    <Compile Include="Thege.cs" />
+    <Compile Include="Weapons\RocketDecorator.cs" />
+    <Compile Include="Movement\RowByRow.cs" />
+    <Compile Include="Enemies\Sinode.cs" />
+    <Compile Include="Movement\Sinus.cs" />
+    <Compile Include="Movement\StraightLine.cs" />
+    <Compile Include="Enemies\Thege.cs" />
     <Compile Include="Upgrade.cs" />
     <Compile Include="WeaponUpgrade.cs" />
   </ItemGroup>

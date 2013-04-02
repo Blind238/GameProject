@@ -17,5 +17,20 @@ namespace GameProject
         }
 
         public abstract void Move();
+
+        public MovingObject GetMovingObject()
+        {
+            return _movingObject;
+        }
+
+        public Vector2 GetSpeed()
+        {
+            return _speed;
+        }
+
+        public void SetSpeed(Vector2 speed)
+        {
+            _speed = speed;
+        }
     }
 }

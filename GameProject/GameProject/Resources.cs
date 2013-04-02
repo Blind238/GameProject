@@ -19,7 +19,6 @@ namespace GameProject
             thege = game.Content.Load<Texture2D>("thege");
             chure = game.Content.Load<Texture2D>("chure");
             sinode = game.Content.Load<Texture2D>("sinode");
-            // What's a Singleton design pattern?
         }
     }
 }

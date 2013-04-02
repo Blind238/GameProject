@@ -12,7 +12,7 @@ namespace GameProject
             
         }
     
-        public void Move() {
+        public override void Move() {
             throw new NotImplementedException();
         }
     }

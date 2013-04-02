@@ -17,7 +17,7 @@ namespace GameProject
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        public static SpriteBatch spriteBatch;
 
         public Game1()
         {
@@ -34,7 +34,8 @@ namespace GameProject
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            Resources.LoadResources(this);
+            GameLogic.Start(this);
             base.Initialize();
         }
 
@@ -73,6 +74,8 @@ namespace GameProject
             // TODO: Add your update logic here
 
             base.Update(gameTime);
+
+            GameLogic.Update(gameTime);
         }
 
         /// <summary>
@@ -84,8 +87,9 @@ namespace GameProject
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.None, RasterizerState.CullCounterClockwise);
             base.Draw(gameTime);
+            spriteBatch.End();
         }
     }
 }
