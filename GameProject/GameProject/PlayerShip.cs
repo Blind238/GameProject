@@ -24,7 +24,7 @@ namespace GameProject
 
             if (gamepadState.IsButtonDown(Buttons.A))
             {
-                _wpn.Shoot(GetPosition());
+                _wpn.Shoot(gametime, GetPosition());
             }
             
             base.Update(gameTime);

@@ -12,9 +12,10 @@ namespace GameProject
             _wpn = wpn;
         }
 
-        public override void Shoot(Vector2 position)
+        public override void Shoot(GameTime gametime, Vector2 position)
         {
             throw new NotImplementedException();
+            _wpn.Shoot(gametime, position);
         }
     }
 }
