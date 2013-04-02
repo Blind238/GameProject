@@ -20,9 +20,10 @@ namespace GameProject
 
         public override void Update(GameTime gameTime)
         {
+            KeyboardState keyboardState = Keyboard.GetState();
             GamePadState gamepadState = GamePad.GetState(PlayerIndex.One);
 
-            if (gamepadState.IsButtonDown(Buttons.A))
+            if (keyboardState.IsKeyDown(Keys.Space)  || gamepadState.IsButtonDown(Buttons.A))
             {
                 _wpn.Shoot(gametime, GetPosition());
             }
