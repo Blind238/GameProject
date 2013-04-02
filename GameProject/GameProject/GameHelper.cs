@@ -15,6 +15,7 @@ namespace GameProject
 
         public static bool CollisionHappened(MovingObject subject, ArrayList movingObjectArray, Stack stack)
         {
+            Vector2 subjectOrigin = subject.GetOrigin();
             Vector2 subjectPosition = subject.GetPosition();
             Texture2D subjectTexture = subject.GetTexture();
 
@@ -24,12 +25,13 @@ namespace GameProject
 
             // Update the subject's transform
             Matrix subjectTransform =
-                Matrix.CreateTranslation(new Vector3(subjectPosition, 0.0f)) * 
-                Matrix.CreateScale(GameLogic.GetScale());
+                Matrix.CreateTranslation(new Vector3(-subjectOrigin, 0.0f)) *
+                Matrix.CreateScale(GameLogic.GetScale()) *
+                Matrix.CreateTranslation(new Vector3(subjectPosition, 0.0f));
 
             // Get the bounding rectangle of the subject
             Rectangle subjectRectangle = CalculateBoundingRectangle(
-                new Rectangle((int)subjectPosition.X, (int)subjectPosition.Y,
+                new Rectangle(0, 0,
                 subjectTexture.Width, subjectTexture.Height), subjectTransform);
 
             bool collision = false;
@@ -58,7 +60,7 @@ namespace GameProject
 
                 // The per-pixel check is expensive, so check the bounding rectangles
                 // first to prevent testing pixels when collisions are impossible.
-                if (subjectRectangle.Intersects(movingObjectRectangle))
+                if (subjectRectangle.Intersects(movingObjectRectangle) || subjectRectangle.Contains(movingObjectRectangle))
                 {
                     // Check collision with person
                     if (IntersectPixels(subjectTransform, subjectTexture.Width,
