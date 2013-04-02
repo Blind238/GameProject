@@ -132,7 +132,7 @@
     <Compile Include="Movement\StraightLine.cs" />
     <Compile Include="Enemies\Thege.cs" />
     <Compile Include="Upgrade.cs" />
-    <Compile Include="WeaponUpgrade.cs" />
+    <Compile Include="Weapons\WeaponUpgrade.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
