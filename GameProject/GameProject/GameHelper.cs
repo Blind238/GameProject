@@ -77,6 +77,18 @@ namespace GameProject
             return collision;
         }
 
+        public static bool AllowedToFire(double lastFired, int shootTimer, GameTime gameTime)
+        {
+            if (gameTime.TotalGameTime.TotalMilliseconds >= lastFired + shootTimer)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         //=============================================
         // What follows was taken from 
         // http://xbox.create.msdn.com/en-US/education/catalog/tutorial/collision_2d_perpixel_transformed
