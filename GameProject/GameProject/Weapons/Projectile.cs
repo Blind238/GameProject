@@ -8,9 +8,17 @@ namespace GameProject
 {
     public class Projectile : MovingObject
     {
-        public Projectile(Game game)
+        private float _damage;
+        public Projectile(Game game, float damage)
             : base(game)
         {
+            _damage = damage;
+            SetTexture(Resources.projectile);
+        }
+
+        public float GetDamage()
+        {
+            return _damage;
         }
     }
 }
