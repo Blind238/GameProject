@@ -15,14 +15,15 @@ namespace GameProject
             : base(movingObject)
         {
             _game = GameLogic.GetGame();
-            GetMovingObject().SetPosition(new Vector2( 40,300));
-            SetSpeed(new Vector2(2, 0));
+            GetMovingObject().SetPosition(new Vector2( 40,_game.GraphicsDevice.Viewport.Height * 0.9f));
+            SetSpeed(new Vector2(4, 0));
         }
 
         public override void Move()
         {
             MovingObject movingObject = GetMovingObject();
             Vector2 position = movingObject.GetPosition();
+            Vector2 origin = movingObject.GetOrigin();
             Vector2 speed = GetSpeed();
 
             KeyboardState keyboardState = Keyboard.GetState();
@@ -35,7 +36,9 @@ namespace GameProject
                 position -= speed;
             }
                         
-            movingObject.SetPosition(new Vector2(MathHelper.Clamp(position.X, 0.0f, _game.GraphicsDevice.Viewport.Width - movingObject.Bounds().Width), position.Y));
+            movingObject.SetPosition(new Vector2(MathHelper.Clamp(position.X,
+               movingObject.Bounds().Width/2-origin.X,
+                (_game.GraphicsDevice.Viewport.Width - movingObject.Bounds().Width/2)-origin.X), position.Y));
 
         }
     }
