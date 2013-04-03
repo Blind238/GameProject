@@ -107,6 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PowerUp.cs" />
     <Compile Include="Weapons\Cannon.cs" />
     <Compile Include="Enemies\Chure.cs" />
     <Compile Include="Enemies\Enemy.cs" />
@@ -131,7 +132,6 @@
     <Compile Include="Movement\Sinus.cs" />
     <Compile Include="Movement\StraightLine.cs" />
     <Compile Include="Enemies\Thege.cs" />
-    <Compile Include="Upgrade.cs" />
     <Compile Include="Weapons\WeaponUpgrade.cs" />
   </ItemGroup>
   <ItemGroup>
