@@ -76,7 +76,7 @@ namespace GameProject
                 Matrix.CreateScale(GameLogic.GetScale()) *
                 // Matrix.CreateRotationZ(movingObjectRotation) *
                 Matrix.CreateTranslation(new Vector3(_position, 0.0f));
-            return GameHelper.CalculateBoundingRectangle(new Rectangle((int)_position.X, (int)_position.Y, _texture.Width, _texture.Height), movingObjectTransform);
+            return GameHelper.CalculateBoundingRectangle(new Rectangle(0,0, _texture.Width, _texture.Height), movingObjectTransform);
             
         }
     }
