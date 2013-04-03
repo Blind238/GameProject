@@ -8,20 +8,32 @@ namespace GameProject
 {
     public class Cannon : IWeapon
     {
-        private Vector2 _offset = new Vector2(0, -25);
-        private Vector2 _speed = new Vector2(0, -10);
+        private Vector2 _offset;
+        private Vector2 _speed;
+        private float _scale;
 
         private static float _pelletDamage = 1.0f;
 
-        private static int _lastFired;
+        private static double _lastFired = 0;
         private static int _shootTimer = 200;
 
+        public Cannon()
+        {
+            _scale = GameLogic.GetScale();
+            _offset = new Vector2(0, -(_scale*5));
+            _speed = new Vector2(0, -(_scale*2));
+        }
+
         public void Shoot(GameTime gameTime, Vector2 position) {
-            Projectile projectile = new Projectile(GameLogic.GetGame(), _pelletDamage);
-            projectile.SetMovingBehaviour(new StraightLine(projectile, _speed));
-            projectile.SetPosition(position + _offset);
-            GameLogic.GetGame().Components.Add(projectile);
-            GameLogic.AddPlayerProjectile(projectile);
+            if (GameHelper.AllowedToFire(_lastFired, _shootTimer, gameTime))
+            {
+                _lastFired = gameTime.TotalGameTime.TotalMilliseconds;
+                Projectile projectile = new Projectile(GameLogic.GetGame(), _pelletDamage);
+                projectile.SetMovingBehaviour(new StraightLine(projectile, _speed));
+                projectile.SetPosition(position + _offset);
+                GameLogic.GetGame().Components.Add(projectile);
+                GameLogic.AddPlayerProjectile(projectile); 
+            }
         }
     }
 }
