@@ -8,6 +8,6 @@ namespace GameProject
 {
     public interface IWeapon
     {
-        void Shoot(GameTime gametime, Vector2 position);
+        void Shoot(GameTime gameTime, Vector2 position);
     }
 }

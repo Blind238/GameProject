@@ -13,7 +13,7 @@ namespace GameProject
 
         private static int _lastBullet;
 
-        public void Shoot(GameTime gametime, Vector2 position) {
+        public void Shoot(GameTime gameTime, Vector2 position) {
             Projectile projectile = new Projectile(GameLogic.GetGame());
             projectile.SetMovingBehaviour(new StraightLine(projectile, _speed));
             projectile.SetTexture(Resources.projectile);
