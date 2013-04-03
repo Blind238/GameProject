@@ -47,11 +47,27 @@ namespace GameProject
                 {
                     while (stack.Count > 0)
                     {
-                        ((MovingObject)stack.Pop()).Dispose();
+                        _enemyProjectiles.Remove((MovingObject)stack.Peek());
+                        _game.Components.Remove((MovingObject)stack.Pop());
                         GameLogic.PlayerHit();
                     }
                 }
             }
+
+            foreach (Enemy enemy in _enemies)
+            {
+                Stack stack = new Stack();
+                if (GameHelper.CollisionHappened(enemy, _playerProjectiles, stack))
+                {
+                    while (stack.Count > 0)
+                    {
+                        _playerProjectiles.Remove((MovingObject)stack.Peek());
+                        _game.Components.Remove((MovingObject)stack.Pop());
+                    }
+                }
+            }
+
+            CleanUp();
         }
 
         private static void PlayerHit()
@@ -72,6 +88,53 @@ namespace GameProject
         public static void AddPlayerProjectile(Projectile projectile)
         {
             _playerProjectiles.Add(projectile);
+        }
+
+        private static void CleanUp()
+        {
+            Stack stack = new Stack();
+            Rectangle viewport = _game.GraphicsDevice.Viewport.Bounds;
+            foreach (Projectile projectile in _playerProjectiles)
+            {
+                Rectangle projectileBounds = projectile.Bounds();
+                if (!viewport.Contains(projectileBounds) && !viewport.Intersects(projectileBounds))
+                {
+                    stack.Push(projectile);
+                }
+            }
+            while (stack.Count > 0)
+            {
+                _playerProjectiles.Remove((MovingObject)stack.Peek());
+                _game.Components.Remove((MovingObject)stack.Pop());
+            }
+
+            foreach (Projectile projectile in _enemyProjectiles)
+            {
+                Rectangle projectileBounds = projectile.Bounds();
+                if (!viewport.Contains(projectileBounds) && !viewport.Intersects(projectileBounds))
+                {
+                    stack.Push(projectile);
+                }
+            }
+            while (stack.Count > 0)
+            {
+                _enemyProjectiles.Remove((MovingObject)stack.Peek());
+                _game.Components.Remove((MovingObject)stack.Pop());
+            }
+
+            foreach (Enemy enemy in _enemies)
+            {
+                Rectangle enemyBounds = enemy.Bounds();
+                if (!viewport.Contains(enemyBounds) && !viewport.Intersects(enemyBounds))
+                {
+                    stack.Push(enemy);
+                }
+            }
+            while (stack.Count > 0)
+            {
+                _enemies.Remove((MovingObject)stack.Peek());
+                _game.Components.Remove((MovingObject)stack.Pop());
+            }
         }
     }
 }
