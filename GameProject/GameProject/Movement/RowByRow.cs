@@ -9,14 +9,12 @@ namespace GameProject
 {
     public class RowByRow : MovingBehaviour
     {
-        private static Vector2 _startPosition = new Vector2(50, 0);
         private static int _fallingAmount = 60;
         private int _reachedEdge = 0;
         private Vector2 _speed = new Vector2(-2, 2);
 
         public RowByRow(MovingObject movingObject)
             : base(movingObject) {
-                movingObject.SetPosition(_startPosition);
         }
     
         public override void Move() {
