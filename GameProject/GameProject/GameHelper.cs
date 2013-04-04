@@ -79,7 +79,10 @@ namespace GameProject
 
         public static bool AllowedToFire(double lastFired, int shootTimer, GameTime gameTime)
         {
-            if (gameTime.TotalGameTime.TotalMilliseconds >= lastFired + shootTimer)
+            // First check is if the needed time has passed
+            // Second check is for when we just had a decorator before us
+            if (gameTime.TotalGameTime.TotalMilliseconds >= lastFired + shootTimer ||
+                gameTime.TotalGameTime.TotalMilliseconds == lastFired)
             {
                 return true;
             }
