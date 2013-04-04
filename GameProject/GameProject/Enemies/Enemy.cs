@@ -8,21 +8,47 @@ namespace GameProject
 {
     public abstract class Enemy : MovingObject
     {
-        private static double _powerUpChance = 0.25;
+        private static double _powerUpChance = 0.20;
+        private float _health;
+        private bool _destroyed = false;
 
         public Enemy(Game game)
             : base(game){
         }
 
         public void Destruct() {
-            Random random = new Random();
-            if(random.NextDouble() <= _powerUpChance)
+            if(!_destroyed)
             {
-                Game game = GameLogic.GetGame();
-                PowerUp powerUp = new PowerUp(game, GetPosition());
-                GameLogic.AddPowerUp(powerUp);
-                GameLogic.GetGame().Components.Add(powerUp);
+                Random random = new Random();
+                if(random.NextDouble() <= _powerUpChance)
+                {
+                    Game game = GameLogic.GetGame();
+                    PowerUp powerUp = new PowerUp(game, GetPosition());
+                    GameLogic.AddPowerUp(powerUp);
+                    GameLogic.GetGame().Components.Add(powerUp);
+                }
+                _destroyed = true; 
             }
+        }
+
+        public void SetHealth(float health)
+        {
+            _health = health;
+        }
+
+        public void Hit(float damage)
+        {
+            _health -= damage;
+
+            if(_health <= 0)
+            {
+                Destruct();
+            }
+        }
+
+        public bool IsDestroyed()
+        {
+            return _destroyed;
         }
     }
 }

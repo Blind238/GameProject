@@ -56,6 +56,8 @@ namespace GameProject
                 }
             }
 
+            Stack killedStack = new Stack();
+
             foreach (Enemy enemy in _enemies)
             {
                 Stack stack = new Stack();
@@ -63,10 +65,23 @@ namespace GameProject
                 {
                     while (stack.Count > 0)
                     {
+                        enemy.Hit(((Projectile)stack.Peek()).GetDamage());
+
                         _playerProjectiles.Remove((MovingObject)stack.Peek());
                         _game.Components.Remove((MovingObject)stack.Pop());
                     }
+
+                    if(enemy.IsDestroyed())
+                    {
+                        killedStack.Push(enemy);
+                    }
                 }
+            }
+
+            while(killedStack.Count > 0)
+            {
+                _enemies.Remove((MovingObject)killedStack.Peek());
+                _game.Components.Remove((MovingObject)killedStack.Pop());
             }
 
             CleanUp();

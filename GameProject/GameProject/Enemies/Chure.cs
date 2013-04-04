@@ -13,6 +13,7 @@ namespace GameProject
         {
             SetTexture(Resources.chure);
             SetMovingBehaviour(new RowByRow(this));
+            SetHealth(3.0f);
         }
     }
 }
