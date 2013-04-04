@@ -54,6 +54,16 @@ namespace GameProject
                         GameLogic.PlayerHit();
                     }
                 }
+
+                if (GameHelper.CollisionHappened(playerShip, _powerUps, stack))
+                {
+                    while (stack.Count > 0)
+                    {
+                        playerShip.SetPowerUp((PowerUp)stack.Peek());
+                        _powerUps.Remove((MovingObject)stack.Peek());
+                        _game.Components.Remove((MovingObject)stack.Pop());
+                    }
+                }
             }
 
             Stack killedStack = new Stack();
