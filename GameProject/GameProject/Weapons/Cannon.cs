@@ -20,8 +20,8 @@ namespace GameProject
         public Cannon()
         {
             _scale = GameLogic.GetScale();
-            _offset = new Vector2(0, -(_scale*5));
-            _speed = new Vector2(0, -(_scale*3));
+            _offset = new Vector2(0, -(_scale*9f));
+            _speed = new Vector2(0, -(_scale*3f));
         }
 
         public void Shoot(GameTime gameTime, Vector2 position) {
@@ -31,6 +31,7 @@ namespace GameProject
                 Projectile projectile = new Projectile(GameLogic.GetGame(), _pelletDamage);
                 projectile.SetMovingBehaviour(new StraightLine(projectile, _speed));
                 projectile.SetPosition(position + _offset);
+                projectile.SetScale(_scale*1.25f);
                 GameLogic.GetGame().Components.Add(projectile);
                 GameLogic.AddPlayerProjectile(projectile); 
             }
