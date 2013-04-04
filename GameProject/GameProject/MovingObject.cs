@@ -13,6 +13,7 @@ namespace GameProject
         private Vector2 _origin;
         private float _scale = GameLogic.GetScale();
         private Texture2D _texture;
+        private Color _color = Color.White;
         private MovingBehaviour _movingBehaviour;
 
         public MovingObject(Game game)
@@ -29,7 +30,7 @@ namespace GameProject
         }
 
         public override void Draw(GameTime gameTime) {
-            Game1.spriteBatch.Draw(_texture, _position, null, Color.White, 0, _origin, _scale, SpriteEffects.None, 0);
+            Game1.spriteBatch.Draw(_texture, _position, null, _color, 0, _origin, _scale, SpriteEffects.None, 0);
             base.Draw(gameTime);
         }
 
@@ -52,7 +53,17 @@ namespace GameProject
 
         public void SetOrigin()
         {
-            _origin = new Vector2(_texture.Width / 2, _texture.Height / 2);
+            _origin = new Vector2(_texture.Width / 2.0f, _texture.Height / 2.0f);
+        }
+
+        public void SetScale(float scale)
+        {
+            _scale = scale;
+        }
+
+        public void SetColor(Color color)
+        {
+            _color = color;
         }
 
         public Texture2D GetTexture()
