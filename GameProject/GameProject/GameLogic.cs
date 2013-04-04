@@ -13,7 +13,7 @@ namespace GameProject
         private static int _gameState;
         private static Game _game;
 
-        private static float _scale = 2.0f;
+        private static float _scale = 3.0f;
 
         private static ArrayList _enemies;
         private static ArrayList _enemyProjectiles;

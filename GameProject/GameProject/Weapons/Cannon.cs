@@ -21,7 +21,7 @@ namespace GameProject
         {
             _scale = GameLogic.GetScale();
             _offset = new Vector2(0, -(_scale*5));
-            _speed = new Vector2(0, -(_scale*2));
+            _speed = new Vector2(0, -(_scale*3));
         }
 
         public void Shoot(GameTime gameTime, Vector2 position) {
