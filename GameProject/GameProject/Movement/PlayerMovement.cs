@@ -37,8 +37,8 @@ namespace GameProject
             }
                         
             movingObject.SetPosition(new Vector2(MathHelper.Clamp(position.X,
-               movingObject.Bounds().Width/2-origin.X,
-                (_game.GraphicsDevice.Viewport.Width - movingObject.Bounds().Width/2)-origin.X), position.Y));
+               movingObject.Bounds().Width/2,
+                (_game.GraphicsDevice.Viewport.Width - movingObject.Bounds().Width/2)), position.Y));
 
         }
     }
