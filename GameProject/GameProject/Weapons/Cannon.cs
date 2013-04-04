@@ -10,7 +10,7 @@ namespace GameProject
     {
         private Vector2 _offset;
         private Vector2 _speed;
-        private float _scale;
+        private float _bulletScale;
 
         private static float _pelletDamage = 1.0f;
 
@@ -20,7 +20,7 @@ namespace GameProject
         public Cannon()
         {
             float scale = GameLogic.GetScale();
-            _scale = scale * 1.5f;
+            _bulletScale = scale * 1.5f;
             _offset = new Vector2(0, -(scale*9f));
             _speed = new Vector2(0, -(scale*3f));
         }
@@ -32,7 +32,7 @@ namespace GameProject
                 Projectile projectile = new Projectile(GameLogic.GetGame(), _pelletDamage);
                 projectile.SetMovingBehaviour(new StraightLine(projectile, _speed));
                 projectile.SetPosition(position + _offset);
-                projectile.SetScale(_scale);
+                projectile.SetScale(_bulletScale);
                 GameLogic.GetGame().Components.Add(projectile);
                 GameLogic.AddPlayerProjectile(projectile); 
             }
