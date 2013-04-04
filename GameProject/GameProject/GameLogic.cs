@@ -19,6 +19,7 @@ namespace GameProject
         private static ArrayList _enemyProjectiles;
         private static ArrayList _players;
         private static ArrayList _playerProjectiles;
+        private static ArrayList _powerUps;
         private static int _playerLives;
         
         public static void Start(Game game)
@@ -29,6 +30,7 @@ namespace GameProject
             _enemyProjectiles = new ArrayList();
             _players = new ArrayList();
             _playerProjectiles = new ArrayList();
+            _powerUps = new ArrayList();
             PlayerShip _playerShip = new PlayerShip(_game);
             _game.Components.Add(_playerShip);
             _players.Add(_playerShip);

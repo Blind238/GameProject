@@ -8,9 +8,13 @@ namespace GameProject
 {
     public class PowerUp : MovingObject
     {
-        public PowerUp(Game game)
-            : base(game) {
-            throw new System.NotImplementedException();
+        private static Vector2 _fallSpeed = new Vector2(0, 3);
+
+        public PowerUp(Game game, Vector2 position)
+            : base(game)
+        {
+            SetPosition(position);
+            SetMovingBehaviour(new StraightLine(this, _fallSpeed));
         }
     }
 }
