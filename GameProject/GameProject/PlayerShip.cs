@@ -30,5 +30,10 @@ namespace GameProject
             
             base.Update(gameTime);
         }
+
+        public void SetPowerUp(PowerUp powerUp)
+        {
+            _wpn = powerUp.GetPowerUp(_wpn);
+        }
     }
 }

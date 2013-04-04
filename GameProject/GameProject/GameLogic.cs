@@ -92,6 +92,11 @@ namespace GameProject
             _playerProjectiles.Add(projectile);
         }
 
+        public static void AddPowerUp(PowerUp powerUp)
+        {
+            _powerUps.Add(powerUp);
+        }
+
         private static void CleanUp()
         {
             Stack stack = new Stack();

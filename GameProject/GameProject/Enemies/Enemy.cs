@@ -20,7 +20,7 @@ namespace GameProject
             {
                 Game game = GameLogic.GetGame();
                 PowerUp powerUp = new PowerUp(game, GetPosition());
-                //GameLogic.AddPowerUp(powerUp);
+                GameLogic.AddPowerUp(powerUp);
                 GameLogic.GetGame().Components.Add(powerUp);
             }
         }

@@ -14,6 +14,9 @@ namespace GameProject
         public static Texture2D chure { get; set; }
         public static Texture2D sinode { get; set; }
         public static Texture2D projectile { get; set; }
+        public static Texture2D guidedmissile { get; set; }
+        public static Texture2D rocket { get; set; }
+        public static Texture2D laser { get; set; }
 
         public static void LoadResources(Game game) {
             playerShip = game.Content.Load<Texture2D>("playerShip");
@@ -21,6 +24,9 @@ namespace GameProject
             chure = game.Content.Load<Texture2D>("chure");
             sinode = game.Content.Load<Texture2D>("sinode");
             projectile = game.Content.Load<Texture2D>("projectile");
+            guidedmissile = game.Content.Load<Texture2D>("guidedmissile");
+            laser = game.Content.Load<Texture2D>("laser");
+            rocket = game.Content.Load<Texture2D>("rocket");
         }
     }
 }
