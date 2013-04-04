@@ -24,9 +24,9 @@ namespace GameProject
             chure = game.Content.Load<Texture2D>("chure");
             sinode = game.Content.Load<Texture2D>("sinode");
             projectile = game.Content.Load<Texture2D>("projectile");
-            guidedmissile = game.Content.Load<Texture2D>("guidedmissile");
-            laser = game.Content.Load<Texture2D>("laser");
-            rocket = game.Content.Load<Texture2D>("rocket");
+            guidedmissile = game.Content.Load<Texture2D>("PowerUps/guidedmissile");
+            laser = game.Content.Load<Texture2D>("PowerUps/laser");
+            rocket = game.Content.Load<Texture2D>("PowerUps/rocket");
         }
     }
 }
