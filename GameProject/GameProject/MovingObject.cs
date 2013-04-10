@@ -42,6 +42,11 @@ namespace GameProject
             _movingBehaviour = movingBehaviour;
         }
 
+        public MovingBehaviour GetMovingBehaviour()
+        {
+            return _movingBehaviour;
+        }
+
         public void SetTexture(Texture2D texture) {
             _texture = texture;
             SetOrigin();
