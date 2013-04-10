@@ -8,21 +8,22 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GameProject
 {
-    static class GameLogic
+    class GameLogic
     {
-        private static int _gameState;
-        private static Game _game;
+        private static GameLogic _gameLogic;
+        private int _gameState;
+        private Game _game;
 
         private static float _scale = 3.0f;
 
-        private static ArrayList _enemies;
-        private static ArrayList _enemyProjectiles;
-        private static ArrayList _players;
-        private static ArrayList _playerProjectiles;
-        private static ArrayList _powerUps;
-        private static int _playerLives;
+        private ArrayList _enemies;
+        private ArrayList _enemyProjectiles;
+        private ArrayList _players;
+        private ArrayList _playerProjectiles;
+        private ArrayList _powerUps;
+        private int _playerLives;
         
-        public static void Start(Game game)
+        private void Start(Game game)
         {
             _game = game;
             _gameState = 1;
@@ -40,7 +41,7 @@ namespace GameProject
             _enemies.Add(chure);
         }
 
-        public static void Update(GameTime gametime)
+        public void Update(GameTime gametime)
         {
             foreach (PlayerShip playerShip in _players)
             {
@@ -51,7 +52,7 @@ namespace GameProject
                     {
                         _enemyProjectiles.Remove((MovingObject)stack.Peek());
                         _game.Components.Remove((MovingObject)stack.Pop());
-                        GameLogic.PlayerHit();
+                        PlayerHit();
                     }
                 }
 
@@ -97,37 +98,37 @@ namespace GameProject
             CleanUp();
         }
 
-        private static void PlayerHit()
+        private void PlayerHit()
         {
             _playerLives--;
         }
 
-        public static Game GetGame()
+        public Game GetGame()
         {
             return _game;
         }
 
-        public static float GetScale()
+        public float GetScale()
         {
             return _scale;
         }
 
-        public static ArrayList GetEnemies()
+        public ArrayList GetEnemies()
         {
             return _enemies;
         }
 
-        public static void AddPlayerProjectile(Projectile projectile)
+        public void AddPlayerProjectile(Projectile projectile)
         {
             _playerProjectiles.Add(projectile);
         }
 
-        public static void AddPowerUp(PowerUp powerUp)
+        public void AddPowerUp(PowerUp powerUp)
         {
             _powerUps.Add(powerUp);
         }
 
-        private static void CleanUp()
+        private void CleanUp()
         {
             Stack stack = new Stack();
             Rectangle viewport = _game.GraphicsDevice.Viewport.Bounds;
@@ -186,6 +187,16 @@ namespace GameProject
                 _enemies.Remove((MovingObject)stack.Peek());
                 _game.Components.Remove((MovingObject)stack.Pop());
             }
+        }
+
+        public static GameLogic GetInstance()
+        {
+            if (_gameLogic == null)
+            {
+                _gameLogic = new GameLogic();
+                _gameLogic.Start(Game1.GetGame());
+            }
+            return _gameLogic;
         }
     }
 }

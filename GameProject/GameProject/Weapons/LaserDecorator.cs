@@ -21,7 +21,7 @@ namespace GameProject
         private static int _shootTimer = 500;
 
         public LaserDecorator(IWeapon wpn) {
-            _scale = GameLogic.GetScale();
+            _scale = GameLogic.GetInstance().GetScale();
             _offset = new Vector2(_scale*2.5f, -(_scale*5f));
             _speed = new Vector2(0, -(_scale*4f));
             _wpn = wpn;
@@ -39,15 +39,15 @@ namespace GameProject
                         Vector2 totalOffset = _offset;
                         Vector2 verticalOffset = new Vector2(0, _scale);
 
-                        Projectile projectile = new Projectile(GameLogic.GetGame(), _pelletDamage);
+                        Projectile projectile = new Projectile(GameLogic.GetInstance().GetGame(), _pelletDamage);
                         projectile.SetMovingBehaviour(new StraightLine(projectile, _speed));
                         for(int k = 0;k < j;k++)
                         {
                             totalOffset += verticalOffset;
                         }
                         projectile.SetPosition(position + totalOffset);
-                        GameLogic.GetGame().Components.Add(projectile);
-                        GameLogic.AddPlayerProjectile(projectile);
+                        GameLogic.GetInstance().GetGame().Components.Add(projectile);
+                        GameLogic.GetInstance().AddPlayerProjectile(projectile);
                     }
 
                     _offset = new Vector2(-_offset.X, _offset.Y);

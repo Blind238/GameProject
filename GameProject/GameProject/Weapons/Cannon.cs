@@ -19,7 +19,7 @@ namespace GameProject
 
         public Cannon()
         {
-            float scale = GameLogic.GetScale();
+            float scale = GameLogic.GetInstance().GetScale();
             _bulletScale = scale * 1.5f;
             _offset = new Vector2(0, -(scale*9f));
             _speed = new Vector2(0, -(scale*3f));
@@ -29,12 +29,13 @@ namespace GameProject
             if (GameHelper.AllowedToFire(_lastFired, _shootTimer, gameTime))
             {
                 _lastFired = gameTime.TotalGameTime.TotalMilliseconds;
-                Projectile projectile = new Projectile(GameLogic.GetGame(), _pelletDamage);
+                Game game = GameLogic.GetInstance().GetGame();
+                Projectile projectile = new Projectile(game, _pelletDamage);
                 projectile.SetMovingBehaviour(new StraightLine(projectile, _speed));
                 projectile.SetPosition(position + _offset);
                 projectile.SetScale(_bulletScale);
-                GameLogic.GetGame().Components.Add(projectile);
-                GameLogic.AddPlayerProjectile(projectile); 
+                game.Components.Add(projectile);
+                GameLogic.GetInstance().AddPlayerProjectile(projectile);
             }
         }
     }

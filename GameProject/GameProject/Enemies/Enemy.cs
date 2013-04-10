@@ -22,10 +22,11 @@ namespace GameProject
                 Random random = new Random();
                 if(random.NextDouble() <= _powerUpChance)
                 {
-                    Game game = GameLogic.GetGame();
+                    GameLogic gameLogic = GameLogic.GetInstance();
+                    Game game = gameLogic.GetGame();
                     PowerUp powerUp = new PowerUp(game, GetPosition());
-                    GameLogic.AddPowerUp(powerUp);
-                    GameLogic.GetGame().Components.Add(powerUp);
+                    gameLogic.AddPowerUp(powerUp);
+                    game.Components.Add(powerUp);
                 }
                 _destroyed = true; 
             }

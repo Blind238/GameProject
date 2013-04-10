@@ -18,9 +18,11 @@ namespace GameProject
     {
         GraphicsDeviceManager graphics;
         public static SpriteBatch spriteBatch;
+        private static Game _game;
 
         public Game1()
         {
+            _game = this;
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
@@ -35,7 +37,7 @@ namespace GameProject
         {
             // TODO: Add your initialization logic here
             Resources.LoadResources(this);
-            GameLogic.Start(this);
+            GameLogic.GetInstance();
             base.Initialize();
         }
 
@@ -75,7 +77,7 @@ namespace GameProject
 
             base.Update(gameTime);
 
-            GameLogic.Update(gameTime);
+            GameLogic.GetInstance().Update(gameTime);
         }
 
         /// <summary>
@@ -90,6 +92,11 @@ namespace GameProject
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.None, RasterizerState.CullCounterClockwise);
             base.Draw(gameTime);
             spriteBatch.End();
+        }
+
+        public static Game GetGame()
+        {
+            return _game;
         }
     }
 }

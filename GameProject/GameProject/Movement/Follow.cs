@@ -56,7 +56,8 @@ namespace GameProject
             {
                 float speed = _speed;
                 Vector2 t = _target.GetPosition() - GetMovingObject().GetPosition();
-                if(t.Length() < GameLogic.GetScale() * 1.5f){
+                if (t.Length() < GameLogic.GetInstance().GetScale() * 1.5f)
+                {
                     speed *= 0.2f;
                 }
                 Vector2 v = GameHelper.PointToTarget(GetMovingObject(), _target);

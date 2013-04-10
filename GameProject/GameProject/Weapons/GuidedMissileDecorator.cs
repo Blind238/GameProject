@@ -27,14 +27,14 @@ namespace GameProject
         private static int _shootTimer = 2000;
 
         public GuidedMissileDecorator(IWeapon wpn) {
-            _scale = GameLogic.GetScale();
+            _scale = GameLogic.GetInstance().GetScale();
             _offset = new Vector2(_scale*8f, -(_scale*0.5f));
             _speed = _scale*2f;
             _wpn = wpn;
 
             if(_enemies == null)
             {
-                _enemies = GameLogic.GetEnemies();
+                _enemies = GameLogic.GetInstance().GetEnemies();
             }
         }
 
@@ -60,9 +60,9 @@ namespace GameProject
                 for(int i = 0;i < _pelletNum;i++)
                 {
                     Vector2 totalOffset = offset;
-                    
 
-                    Projectile projectile = new Projectile(GameLogic.GetGame(), _pelletDamage);
+
+                    Projectile projectile = new Projectile(GameLogic.GetInstance().GetGame(), _pelletDamage);
                     if(previousProjectile == null)
                     {
                         projectile.SetPosition(position + totalOffset);
@@ -83,8 +83,8 @@ namespace GameProject
                     previousProjectile = projectile;
 
                     projectile.SetScale(_scale * _missileScale);
-                    GameLogic.GetGame().Components.Add(projectile);
-                    GameLogic.AddPlayerProjectile(projectile);
+                    GameLogic.GetInstance().GetGame().Components.Add(projectile);
+                    GameLogic.GetInstance().AddPlayerProjectile(projectile);
                 }
             }
             _wpn.Shoot(gameTime, position);

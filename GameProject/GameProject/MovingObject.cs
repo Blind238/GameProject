@@ -11,13 +11,14 @@ namespace GameProject
     {
         private Vector2 _position;
         private Vector2 _origin;
-        private float _scale = GameLogic.GetScale();
+        private float _scale;
         private Texture2D _texture;
         private Color _color = Color.White;
         private MovingBehaviour _movingBehaviour;
 
         public MovingObject(Game game)
             : base(game) {
+                _scale = GameLogic.GetInstance().GetScale();
         }
 
         public override void Initialize() {
@@ -89,7 +90,7 @@ namespace GameProject
         {
             Matrix movingObjectTransform =
                 Matrix.CreateTranslation(new Vector3(-_origin, 0.0f)) *
-                Matrix.CreateScale(GameLogic.GetScale()) *
+                Matrix.CreateScale(GameLogic.GetInstance().GetScale()) *
                 // Matrix.CreateRotationZ(movingObjectRotation) *
                 Matrix.CreateTranslation(new Vector3(_position, 0.0f));
             return GameHelper.CalculateBoundingRectangle(new Rectangle(0,0, _texture.Width, _texture.Height), movingObjectTransform);

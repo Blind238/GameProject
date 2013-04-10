@@ -18,6 +18,7 @@ namespace GameProject
             Vector2 subjectOrigin = subject.GetOrigin();
             Vector2 subjectPosition = subject.GetPosition();
             Texture2D subjectTexture = subject.GetTexture();
+            float _scale = GameLogic.GetInstance().GetScale();
 
             _subjectTextureData =
                 new Color[subjectTexture.Width * subjectTexture.Height];
@@ -26,7 +27,7 @@ namespace GameProject
             // Update the subject's transform
             Matrix subjectTransform =
                 Matrix.CreateTranslation(new Vector3(-subjectOrigin, 0.0f)) *
-                Matrix.CreateScale(GameLogic.GetScale()) *
+                Matrix.CreateScale(_scale) *
                 Matrix.CreateTranslation(new Vector3(subjectPosition, 0.0f));
 
             // Get the bounding rectangle of the subject
@@ -49,7 +50,7 @@ namespace GameProject
                 // Build the movingObject's transform
                 Matrix movingObjectTransform =
                     Matrix.CreateTranslation(new Vector3(-movingObjectOrigin, 0.0f)) *
-                    Matrix.CreateScale(GameLogic.GetScale()) *
+                    Matrix.CreateScale(_scale) *
                     // Matrix.CreateRotationZ(movingObjectRotation) *
                     Matrix.CreateTranslation(new Vector3(movingObjectPosition, 0.0f));
 

@@ -24,7 +24,7 @@ namespace GameProject
         private static int _shootTimer = 1000;
 
         public RocketDecorator(IWeapon wpn) {
-            _scale = GameLogic.GetScale();
+            _scale = GameLogic.GetInstance().GetScale();
             _offset = new Vector2(_scale*5f, -(_scale*0.5f));
             _speed = new Vector2(0, -(_scale*2f));
             _wpn = wpn;
@@ -53,7 +53,7 @@ namespace GameProject
                     Vector2 totalOffset = offset;
                     Vector2 verticalOffset = new Vector2(0, _scale * _rocketScale);
 
-                    Projectile projectile = new Projectile(GameLogic.GetGame(), _pelletDamage);
+                    Projectile projectile = new Projectile(GameLogic.GetInstance().GetGame(), _pelletDamage);
                     projectile.SetMovingBehaviour(new StraightLine(projectile, _speed));
                     for(int k = 0;k < i;k++)
                     {
@@ -61,8 +61,8 @@ namespace GameProject
                     }
                     projectile.SetPosition(position + totalOffset);
                     projectile.SetScale(_scale * _rocketScale);
-                    GameLogic.GetGame().Components.Add(projectile);
-                    GameLogic.AddPlayerProjectile(projectile);
+                    GameLogic.GetInstance().GetGame().Components.Add(projectile);
+                    GameLogic.GetInstance().AddPlayerProjectile(projectile);
                 }
             }
             _wpn.Shoot(gameTime, position);

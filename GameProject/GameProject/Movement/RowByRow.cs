@@ -20,7 +20,7 @@ namespace GameProject
         public override void Move() {
             MovingObject movingObject = GetMovingObject();
             Vector2 position = movingObject.GetPosition();
-            Viewport viewport = GameLogic.GetGame().GraphicsDevice.Viewport;
+            Viewport viewport = GameLogic.GetInstance().GetGame().GraphicsDevice.Viewport;
 
             if (position.Y < (_reachedEdge + _fallingAmount))
             {
