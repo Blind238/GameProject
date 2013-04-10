@@ -92,6 +92,13 @@ namespace GameProject
             }
         }
 
+        public static Vector2 PointToTarget(MovingObject subject, MovingObject target)
+        {
+            Vector2 v = target.GetPosition() - subject.GetPosition();
+            v.Normalize();
+            return v;
+        }
+
         //=============================================
         // What follows was taken from 
         // http://xbox.create.msdn.com/en-US/education/catalog/tutorial/collision_2d_perpixel_transformed
