@@ -11,7 +11,7 @@ namespace GameProject
     class GameLogic
     {
         private static GameLogic _gameLogic;
-        private int _gameState;
+        private int _currentLevel;
         private Game _game;
 
         private static float _scale = 3.0f;
