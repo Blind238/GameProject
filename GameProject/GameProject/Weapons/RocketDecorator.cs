@@ -50,7 +50,7 @@ namespace GameProject
 
                 for(int i = 0;i < _pelletNum;i++)
                 {
-                    Vector2 totalOffset = _offset;
+                    Vector2 totalOffset = offset;
                     Vector2 verticalOffset = new Vector2(0, _scale * _rocketScale);
 
                     Projectile projectile = new Projectile(GameLogic.GetGame(), _pelletDamage);
@@ -64,9 +64,6 @@ namespace GameProject
                     GameLogic.GetGame().Components.Add(projectile);
                     GameLogic.AddPlayerProjectile(projectile);
                 }
-
-                _offset = new Vector2(-_offset.X, _offset.Y);
-               
             }
             _wpn.Shoot(gameTime, position);
         }
