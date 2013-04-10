@@ -112,6 +112,11 @@ namespace GameProject
             return _scale;
         }
 
+        public static ArrayList GetEnemies()
+        {
+            return _enemies;
+        }
+
         public static void AddPlayerProjectile(Projectile projectile)
         {
             _playerProjectiles.Add(projectile);
