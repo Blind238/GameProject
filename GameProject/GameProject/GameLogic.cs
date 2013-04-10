@@ -159,6 +159,20 @@ namespace GameProject
                 _game.Components.Remove((MovingObject)stack.Pop());
             }
 
+            foreach (PowerUp powerUp in _powerUps)
+            {
+                Rectangle projectileBounds = powerUp.Bounds();
+                if (!viewport.Contains(projectileBounds) && !viewport.Intersects(projectileBounds))
+                {
+                    stack.Push(powerUp);
+                }
+            }
+            while (stack.Count > 0)
+            {
+                _powerUps.Remove((MovingObject)stack.Peek());
+                _game.Components.Remove((MovingObject)stack.Pop());
+            }
+
             foreach (Enemy enemy in _enemies)
             {
                 Rectangle enemyBounds = enemy.Bounds();
