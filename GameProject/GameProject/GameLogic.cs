@@ -123,6 +123,11 @@ namespace GameProject
             _playerProjectiles.Add(projectile);
         }
 
+        public void AddEnemyProjectile(Projectile projectile)
+        {
+            _enemyProjectiles.Add(projectile);
+        }
+
         public void AddPowerUp(PowerUp powerUp)
         {
             _powerUps.Add(powerUp);
