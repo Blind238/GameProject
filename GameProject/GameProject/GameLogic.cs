@@ -43,6 +43,9 @@ namespace GameProject
 
         public void Update(GameTime gametime)
         {
+            // Go though ArrayLists and check for collisions
+            // If true, take appropriate action
+
             foreach (PlayerShip playerShip in _players)
             {
                 Stack stack = new Stack();
@@ -68,12 +71,15 @@ namespace GameProject
             }
 
             Stack killedStack = new Stack();
+            Stack collideStack = new Stack();
 
             foreach (Enemy enemy in _enemies)
             {
+                // Check enemy collisions with playerProjectiles
                 Stack stack = new Stack();
                 if (GameHelper.CollisionHappened(enemy, _playerProjectiles, stack))
                 {
+                    // Apply damage to enemy for each projectile
                     while (stack.Count > 0)
                     {
                         enemy.Hit(((Projectile)stack.Peek()).GetDamage());
@@ -82,10 +88,17 @@ namespace GameProject
                         _game.Components.Remove((MovingObject)stack.Pop());
                     }
 
+                    // Check if enemy should be dead, kill it
                     if(enemy.IsDestroyed())
                     {
                         killedStack.Push(enemy);
                     }
+                }
+
+                // Check enemy collisions with players
+                if (GameHelper.CollisionHappened(enemy, _players, stack))
+                {
+                     collideStack.Push(enemy);
                 }
             }
 
@@ -93,6 +106,13 @@ namespace GameProject
             {
                 _enemies.Remove((MovingObject)killedStack.Peek());
                 _game.Components.Remove((MovingObject)killedStack.Pop());
+            }
+
+            while (collideStack.Count > 0)
+            {
+                _enemies.Remove((MovingObject)collideStack.Peek());
+                _game.Components.Remove((MovingObject)collideStack.Pop());
+                PlayerHit();
             }
 
             CleanUp();
@@ -116,6 +136,11 @@ namespace GameProject
         public ArrayList GetEnemies()
         {
             return _enemies;
+        }
+
+        public ArrayList GetPlayerShips()
+        {
+            return _players;
         }
 
         public void AddPlayerProjectile(Projectile projectile)
@@ -189,8 +214,15 @@ namespace GameProject
             }
             while (stack.Count > 0)
             {
-                _enemies.Remove((MovingObject)stack.Peek());
-                _game.Components.Remove((MovingObject)stack.Pop());
+                if (stack.Peek().GetType() == typeof(Thege))
+                {
+                    ResetThege((Thege)stack.Pop());
+                }
+                else
+                {
+                    _enemies.Remove((MovingObject)stack.Peek());
+                    _game.Components.Remove((MovingObject)stack.Pop());
+                }
             }
         }
 
@@ -202,6 +234,16 @@ namespace GameProject
                 _gameLogic.Start(Game1.GetGame());
             }
             return _gameLogic;
+        }
+
+        private void ResetThege(Thege thege)
+        {
+            _enemies.Remove(thege);
+            _game.Components.Remove(thege);
+
+            Thege newThege = new Thege(_game);
+            _game.Components.Add(newThege);
+            _enemies.Add(newThege);
         }
     }
 }
