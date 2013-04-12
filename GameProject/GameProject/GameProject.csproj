@@ -138,6 +138,7 @@
     <Compile Include="Weapons\WeaponUpgrade.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Documentatie.txt" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
   </ItemGroup>

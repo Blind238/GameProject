@@ -1,0 +1,33 @@
+﻿Patterns
+
+-Strategy Pattern
+	Toegepast op de beweging van alles. Alles dat van MovingObject overerft, moet een MovingBehaviour hebben.
+
+-Decorator/Composite Pattern
+	Toegepast op de weapons van de speler. Ze implementeren IWeapon en de basis is Cannon. De decorators overerven van WeaponUpgrade, dat zelf IWeapon implementeert.
+
+-Singleton
+	Ik heb dit toegepast bij de GameLogic, dat eerder een volledig static class was.
+
+Interesante keuzes
+	Ik heb besloten om alle projectilen met de class Projectile te maken. Elke soort wapen schiet een serie van projectielen dat als een groep een bepaald gedrag hebben. Elke projectiel heeft ook een damage waarde, dat bij het instantieren dooregegeven moet worden.
+
+	De graphics zijn veel kleiner dan wat er op de scherm staat. Ik heb voor collision een matrix methode gebruikt om de schaal in de berekeneningen te gebruiken.
+
+Uitleg klassen
+
+-GameLogic
+	GameLogic behandelt alle logica en wordt geroepen nadat alle components geupdate hebben.
+	Verantwoordelijkheden
+	- Collision checken tussen relevante objecten
+	- Functies om Enemy en Player projectiles toe te voegen
+	- Functie om PowerUp toe te voegen (voor collision)
+	- Enemies, PlayerShips, Game toegankelijk maken
+	- Opruimen alle objecten buiten de viewport, uitzondering op Thege
+	- Hud aanmaken
+
+-GameHelper
+	GameHelper is een static class met functies voor collision detection op pixel niveau. Als er een collision gebeurt zet hij de object op een stack, dat als parameter bij de methode wordt meegegeven.
+
+-Resources
+	Load alle textures en maakt ze toeganklijk
