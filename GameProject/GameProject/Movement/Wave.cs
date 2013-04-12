@@ -10,7 +10,6 @@ namespace GameProject
     public class Wave : MovingBehaviour
     {
         private static double _amplitude = 10.0;
-        private static double _frequency = 1;
         private Vector2 _direction;
         private Vector2 _modDirection;
         private float _speed;
@@ -18,9 +17,6 @@ namespace GameProject
         private double _startTime;
         private double _elapsedTime;
         private bool _resetTime = false;
-
-        private double _sinePosition = 0.0f;
-        private double _sineAngle;
 
         /// <summary>
         /// Sets forth a sine movement of 'movingObject'

@@ -9,7 +9,7 @@ namespace GameProject
     public class Chure : Enemy
     {
         private static Random _random = new Random();
-        private static double _shootChance = 0.04;
+        private static double _shootChance = 0.01;
         private static Vector2 _shootVector = new Vector2(0.0f, 2.0f);
         private static Vector2 _offset;
 

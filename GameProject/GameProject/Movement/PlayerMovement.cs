@@ -15,7 +15,7 @@ namespace GameProject
             : base(movingObject)
         {
             _game = GameLogic.GetInstance().GetGame();
-            GetMovingObject().SetPosition(new Vector2( 40,_game.GraphicsDevice.Viewport.Height * 0.9f));
+            GetMovingObject().SetPosition(new Vector2(_game.GraphicsDevice.Viewport.Width / 2, _game.GraphicsDevice.Viewport.Height * 0.9f));
             SetSpeed(new Vector2(4.0f, 0.0f));
         }
 

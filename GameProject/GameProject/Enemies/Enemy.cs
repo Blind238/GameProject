@@ -8,7 +8,7 @@ namespace GameProject
 {
     public abstract class Enemy : MovingObject
     {
-        private static double _powerUpChance = 0.20;
+        private static double _powerUpChance = 0.30;
         private float _health;
         private bool _destroyed = false;
 

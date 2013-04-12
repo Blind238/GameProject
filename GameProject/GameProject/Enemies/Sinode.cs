@@ -8,12 +8,13 @@ namespace GameProject
 {
     public class Sinode : Enemy
     {
-        private Random _random = new Random();
+        private static Random _random = new Random();
 
         public Sinode(Game game)
             : base(game)
         {
             SetTexture(Resources.sinode);
+            SetHealth(2.5f);
 
             // Spawn at one of the top corners
             Vector2 startingPosition;

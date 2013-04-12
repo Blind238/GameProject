@@ -37,14 +37,7 @@ namespace GameProject
             _players.Add(_playerShip);
 
             CreateHud(game);
-            
-            Chure chure = new Chure(_game);
-            _game.Components.Add(chure);
-            _enemies.Add(chure);
-
-            Thege thege = new Thege(_game);
-            _game.Components.Add(thege);
-            _enemies.Add(thege);
+            Levels.LoadLevel((int)Levels.ELevel.One);
         }
 
         public void Update(GameTime gametime)
@@ -122,6 +115,11 @@ namespace GameProject
             }
 
             CleanUp();
+
+            if (_enemies.Count == 0)
+            {
+                Levels.LoadNext();
+            }
         }
 
         private void PlayerHit()

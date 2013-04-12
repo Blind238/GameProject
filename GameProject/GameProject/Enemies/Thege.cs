@@ -8,12 +8,13 @@ namespace GameProject
 {
     public class Thege : Enemy
     {
-        private Random _random = new Random();
+        private static Random _random = new Random();
 
         public Thege(Game game)
             : base(game)
         {
             SetTexture(Resources.thege);
+            SetHealth(2.0f);
 
             // Spawn at one of the top corners
             Vector2 startingPosition;

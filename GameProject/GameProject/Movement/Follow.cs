@@ -16,7 +16,7 @@ namespace GameProject
         private MovingObject _target = null;
         private ArrayList _fallbackTargets = null;
         private float _speed;
-        private float _turnSpeed = 0.03f;
+        private float _turnSpeed = 0.04f;
 
         public Follow(MovingObject movingObject, ArrayList targets, float speed) 
             : base(movingObject) 
