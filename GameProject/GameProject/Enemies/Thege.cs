@@ -8,7 +8,7 @@ namespace GameProject
 {
     public class Thege : Enemy
     {
-        private Random random = new Random();
+        private Random _random = new Random();
 
         public Thege(Game game)
             : base(game)
@@ -17,7 +17,7 @@ namespace GameProject
 
             // Spawn at one of the top corners
             Vector2 startingPosition;
-            if(random.Next(2) == 0)
+            if(_random.Next(2) == 0)
             {
                 startingPosition = new Vector2( 0.0f, 0.0f);
             }
