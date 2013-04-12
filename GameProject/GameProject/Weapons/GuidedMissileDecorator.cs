@@ -40,10 +40,13 @@ namespace GameProject
 
         public override void Shoot(GameTime gameTime, Vector2 position)
         {
+            // Check if we're allowed to fire, do so
             if (GameHelper.AllowedToFire(_lastFired, _shootTimer, gameTime))
             {
                 _lastFired = gameTime.TotalGameTime.TotalMilliseconds;
 
+                // If last time we fired from the right,
+                // set the offset to the left and vice versa
                 Vector2 offset;
                 if (_sideFiredLast == SideFired.Left)
                 {
@@ -55,12 +58,17 @@ namespace GameProject
                     offset = new Vector2(-_offset.X, _offset.Y);
                     _sideFiredLast = SideFired.Left;
                 }
+
+                // Extra Offset for the spacing between elements
                 Vector2 extraOffset = new Vector2();
+
+                // Store the previous projectile so we can follow it.
+                // This allows the rest of the missile to stay together if the
+                // enemy dies.
                 Projectile previousProjectile = null;
                 for(int i = 0;i < _pelletNum;i++)
                 {
                     Vector2 totalOffset = offset;
-
 
                     Projectile projectile = new Projectile(GameLogic.GetInstance().GetGame(), _pelletDamage);
                     if(previousProjectile == null)

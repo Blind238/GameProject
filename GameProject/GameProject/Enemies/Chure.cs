@@ -9,8 +9,8 @@ namespace GameProject
     public class Chure : Enemy
     {
         private static Random _random = new Random();
-        private static double _dropChance = 0.04;
-        private static Vector2 _fallVector = new Vector2(0.0f, 2.0f);
+        private static double _shootChance = 0.04;
+        private static Vector2 _shootVector = new Vector2(0.0f, 2.0f);
         private static Vector2 _offset;
 
         public Chure(Game game)
@@ -27,13 +27,18 @@ namespace GameProject
 
         public override void Update(GameTime gameTime)
         {
-            if (_random.NextDouble() <= _dropChance)
+            if (_random.NextDouble() <= _shootChance)
             {
                 GameLogic gameLogic = GameLogic.GetInstance();
                 Game game = gameLogic.GetGame();
+
                 Projectile projectile = new Projectile(game, 1.0f);
-                projectile.SetMovingBehaviour(new StraightLine(projectile, _fallVector));
+                projectile.SetMovingBehaviour(new StraightLine(projectile, _shootVector));
+
+                // Tweak the vertical position with one scaled pixel,
+                // It looks better
                 projectile.SetPosition(GetPosition() + _offset - new Vector2(0.0f,gameLogic.GetScale()));
+
                 projectile.SetScale(gameLogic.GetScale() * 2.0f);
                 game.Components.Add(projectile);
                 gameLogic.AddEnemyProjectile(projectile);

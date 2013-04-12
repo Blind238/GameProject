@@ -16,6 +16,10 @@ namespace GameProject
             : base(game){
         }
 
+        /// <summary>
+        /// Gets called when health is 0 or lower.
+        /// Sets the destroyed boolean and creates a powerup.
+        /// </summary>
         public void Destruct() {
             if(!_destroyed)
             {

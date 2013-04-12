@@ -35,8 +35,10 @@ namespace GameProject
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            // Load in Resources
             Resources.LoadResources(this);
+
+            // Start the GameLogic. This does all of the heavy lifting.
             GameLogic.GetInstance();
             base.Initialize();
         }
@@ -73,8 +75,6 @@ namespace GameProject
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
-
             base.Update(gameTime);
 
             GameLogic.GetInstance().Update(gameTime);
@@ -88,12 +88,15 @@ namespace GameProject
         {
             GraphicsDevice.Clear(Color.Black);
 
-            // TODO: Add your drawing code here
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, DepthStencilState.None, RasterizerState.CullCounterClockwise);
             base.Draw(gameTime);
             spriteBatch.End();
         }
 
+        /// <summary>
+        /// Returns a reference to the game.
+        /// </summary>
+        /// <returns></returns>
         public static Game GetGame()
         {
             return _game;

@@ -9,6 +9,7 @@ namespace GameProject
     public class Thege : Enemy
     {
         private Random random = new Random();
+
         public Thege(Game game)
             : base(game)
         {

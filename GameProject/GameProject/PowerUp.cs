@@ -26,6 +26,7 @@ namespace GameProject
 
         public IWeapon GetPowerUp(IWeapon wpn)
         {
+            // Adds the powerup to the wpn and returns it.
             WeaponUpgrade wpnUpgrade;
             switch(_powerUp)
             {
@@ -49,7 +50,7 @@ namespace GameProject
         {
             Random random = new Random();
             // We pass the first value of the PowerUps enum as the min,
-            // and the last as the max.
+            // and the last(plus one) as the max.
             _powerUp =(PowerUps)random.Next((int)PowerUps.Laser,(int)PowerUps.Rocket + 1);
 
             switch(_powerUp)

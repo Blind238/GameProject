@@ -26,6 +26,8 @@ namespace GameProject
         }
 
         public void Shoot(GameTime gameTime, Vector2 position) {
+
+            // Check if we're allowed to fire, do so
             if (GameHelper.AllowedToFire(_lastFired, _shootTimer, gameTime))
             {
                 _lastFired = gameTime.TotalGameTime.TotalMilliseconds;

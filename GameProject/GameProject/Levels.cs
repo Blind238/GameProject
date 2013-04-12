@@ -36,12 +36,12 @@ namespace GameProject
 
         private static void LevelTwo(Game game, GameLogic gameLogic)
         {
-            
+
         }
 
         private static void LevelThree(Game game, GameLogic gameLogic)
         {
-            
+
         }
     }
 }

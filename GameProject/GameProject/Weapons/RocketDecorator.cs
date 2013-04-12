@@ -32,10 +32,13 @@ namespace GameProject
 
         public override void Shoot(GameTime gameTime, Vector2 position)
         {
+            // Check if we're allowed to fire, do so
             if (GameHelper.AllowedToFire(_lastFired, _shootTimer, gameTime))
             {
                 _lastFired = gameTime.TotalGameTime.TotalMilliseconds;
 
+                // If last time we fired from the right,
+                // set the offset to the left and vice versa
                 Vector2 offset;
                 if (_sideFiredLast == SideFired.Left)
                 {

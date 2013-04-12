@@ -23,8 +23,10 @@ namespace GameProject
             KeyboardState keyboardState = Keyboard.GetState();
             GamePadState gamepadState = GamePad.GetState(PlayerIndex.One);
 
-            if (keyboardState.IsKeyDown(Keys.Space)  || gamepadState.IsButtonDown(Buttons.A))
+            if (keyboardState.IsKeyDown(Keys.Space) || gamepadState.IsButtonDown(Buttons.A))
             {
+                // Shoot, giving our position so 
+                // the weapon knows where to spawn projectiles
                 _wpn.Shoot(gameTime, GetPosition());
             }
             

@@ -8,6 +8,11 @@ namespace GameProject
 {
     public class StraightLine : MovingBehaviour
     {
+        /// <summary>
+        /// Makes 'movingObject' move with vector 'speed'
+        /// </summary>
+        /// <param name="movingObject"></param>
+        /// <param name="speed"></param>
         public StraightLine(MovingObject movingObject, Vector2 speed)
             :base(movingObject) {
                 SetSpeed(speed);

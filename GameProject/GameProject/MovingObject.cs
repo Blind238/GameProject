@@ -7,6 +7,8 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GameProject
 {
+    // All moving objects will implement this class.
+
     public abstract class MovingObject : DrawableGameComponent
     {
         private Vector2 _position;

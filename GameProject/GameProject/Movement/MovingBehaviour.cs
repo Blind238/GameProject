@@ -9,7 +9,6 @@ namespace GameProject
     public abstract class MovingBehaviour
     {
         private MovingObject _movingObject;
-        private Vector2 _direction;
         private Vector2 _speed;
 
         public MovingBehaviour(MovingObject movingObject) {

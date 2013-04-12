@@ -26,7 +26,6 @@ namespace GameProject
         private void Start(Game game)
         {
             _game = game;
-            _gameState = 1;
             _enemies = new ArrayList();
             _enemyProjectiles = new ArrayList();
             _players = new ArrayList();
@@ -39,6 +38,10 @@ namespace GameProject
             Chure chure = new Chure(_game);
             _game.Components.Add(chure);
             _enemies.Add(chure);
+
+            Thege thege = new Thege(_game);
+            _game.Components.Add(thege);
+            _enemies.Add(thege);
         }
 
         public void Update(GameTime gametime)

@@ -26,8 +26,10 @@ namespace GameProject
             _speed = speed;
 
             TargetValidation();
+
             // We want the initial direction to be straight up
-            // TODO: Make this dynamic
+            // in case that there are no enemies on screen
+            // TODO: Make Follow initial vector dynamic
             SetSpeed(new Vector2(0.0f, -_speed));
         }
 
@@ -47,7 +49,6 @@ namespace GameProject
             v = v * _speed;
             v = v * new Vector2(1.0f, -1.0f);
             SetSpeed(v);
-            //SetSpeed(new Vector2(0.0f, -_speed));
         }
 
         private void SpeedSet()
@@ -80,6 +81,10 @@ namespace GameProject
             GetMovingObject().SetPosition(GetMovingObject().GetPosition() + GetSpeed());
         }
 
+        /// <summary>
+        /// Checks if targets are still valid and takes
+        /// appropriate action if they aren't.
+        /// </summary>
         private void TargetValidation()
         {
             if (_targets != null)
@@ -112,7 +117,9 @@ namespace GameProject
             }
         }
 
-        // http://xbox.create.msdn.com/en-US/education/catalog/sample/aiming
+        // This function is used to help give the
+        // object a more realistic turning behaviour.
+        // Source: http://xbox.create.msdn.com/en-US/education/catalog/sample/aiming
         private static float TurnToFace(Vector2 position, Vector2 faceThis,
             float currentAngle, float turnSpeed)
         {

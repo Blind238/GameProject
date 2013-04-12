@@ -8,11 +8,22 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GameProject
 {
+    // GameHelper is used to store more complicated
+    // functions
+
     static class GameHelper
     {
         private static Color[] _subjectTextureData;
         private static Color[] _movingObjectTextureData;  
-
+        
+        /// <summary>
+        /// Checks for collisions, stores them in the stack
+        /// and returns a boolean
+        /// </summary>
+        /// <param name="subject"></param>
+        /// <param name="movingObjectArray"></param>
+        /// <param name="stack"></param>
+        /// <returns></returns>
         public static bool CollisionHappened(MovingObject subject, ArrayList movingObjectArray, Stack stack)
         {
             Vector2 subjectOrigin = subject.GetOrigin();
@@ -78,6 +89,13 @@ namespace GameProject
             return collision;
         }
 
+        /// <summary>
+        /// Check if a weapon is allowed to fire based on gametime
+        /// </summary>
+        /// <param name="lastFired">Last time(totalMilliseconds) that we fired</param>
+        /// <param name="shootTimer">Firing interval(milliseconds)</param>
+        /// <param name="gameTime"></param>
+        /// <returns></returns>
         public static bool AllowedToFire(double lastFired, int shootTimer, GameTime gameTime)
         {
             // First check is if the needed time has passed
@@ -93,6 +111,13 @@ namespace GameProject
             }
         }
 
+        /// <summary>
+        /// Returns a unit vector of the direction from
+        /// subject to target
+        /// </summary>
+        /// <param name="subject"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
         public static Vector2 PointToTarget(MovingObject subject, MovingObject target)
         {
             Vector2 v = target.GetPosition() - subject.GetPosition();

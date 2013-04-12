@@ -32,6 +32,8 @@ namespace GameProject
             if (GameHelper.AllowedToFire(_lastFired, _shootTimer, gameTime))
             {
                 _lastFired = gameTime.TotalGameTime.TotalMilliseconds;
+
+                // We fire a laser from each side of the same time
                 for(int i = 0;i < 2;i++)
                 {
                     for(int j = 0;j < _pelletNum;j++)
