@@ -107,7 +107,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hud.cs" />
     <Compile Include="Levels.cs" />
+    <Compile Include="Movement\DontMove.cs" />
     <Compile Include="PowerUp.cs" />
     <Compile Include="Weapons\Cannon.cs" />
     <Compile Include="Enemies\Chure.cs" />

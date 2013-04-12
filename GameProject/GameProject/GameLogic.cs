@@ -21,7 +21,8 @@ namespace GameProject
         private ArrayList _players;
         private ArrayList _playerProjectiles;
         private ArrayList _powerUps;
-        private int _playerLives;
+        private Hud _hud;
+        private int _playerLives = 3;
         
         private void Start(Game game)
         {
@@ -35,6 +36,8 @@ namespace GameProject
             _game.Components.Add(_playerShip);
             _players.Add(_playerShip);
 
+            CreateHud(game);
+            
             Chure chure = new Chure(_game);
             _game.Components.Add(chure);
             _enemies.Add(chure);
@@ -123,7 +126,17 @@ namespace GameProject
 
         private void PlayerHit()
         {
-            _playerLives--;
+            if (_playerLives > 0)
+            {
+                _playerLives--;
+                _hud.UpdateHud(_playerLives);
+            }
+        }
+
+        private void CreateHud(Game game)
+        {
+            _hud = new Hud(game, _playerLives);
+            game.Components.Add(_hud);
         }
 
         public Game GetGame()
