@@ -49,19 +49,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="sinode.bmp">
+    <Compile Include="Enemies\sinode.bmp">
       <Name>sinode</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="chure.bmp">
+    <Compile Include="Enemies\chure.bmp">
       <Name>chure</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="thege.bmp">
+    <Compile Include="Enemies\thege.bmp">
       <Name>thege</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>

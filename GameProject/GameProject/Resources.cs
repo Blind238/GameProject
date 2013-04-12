@@ -20,9 +20,9 @@ namespace GameProject
 
         public static void LoadResources(Game game) {
             playerShip = game.Content.Load<Texture2D>("playerShip");
-            thege = game.Content.Load<Texture2D>("thege");
-            chure = game.Content.Load<Texture2D>("chure");
-            sinode = game.Content.Load<Texture2D>("sinode");
+            thege = game.Content.Load<Texture2D>("Enemies/thege");
+            chure = game.Content.Load<Texture2D>("Enemies/chure");
+            sinode = game.Content.Load<Texture2D>("Enemies/sinode");
             projectile = game.Content.Load<Texture2D>("projectile");
             guidedmissile = game.Content.Load<Texture2D>("PowerUps/guidedmissile");
             laser = game.Content.Load<Texture2D>("PowerUps/laser");
