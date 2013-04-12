@@ -130,7 +130,7 @@
     <Compile Include="Weapons\RocketDecorator.cs" />
     <Compile Include="Movement\RowByRow.cs" />
     <Compile Include="Enemies\Sinode.cs" />
-    <Compile Include="Movement\Sinus.cs" />
+    <Compile Include="Movement\Wave.cs" />
     <Compile Include="Movement\StraightLine.cs" />
     <Compile Include="Enemies\Thege.cs" />
     <Compile Include="Weapons\WeaponUpgrade.cs" />
